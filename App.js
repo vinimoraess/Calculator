@@ -1,10 +1,13 @@
-import React from 'react';
-import { StyleSheet, View, SafeAreaView } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, View } from 'react-native';
 import Button from './src/components/Button';
+import Display from './src/components/Display';
 
 export default function App() {
+  const [displayValue, setDisplayValue] = useState("0");
   return (
     <View style={styles.container}>
+      <Display value={displayValue}/>
         <View style={styles.buttons}>
           <Button label="AC"/>
           <Button label="/"/>
@@ -38,7 +41,4 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
   },
-  safeAreaView: {
-    paddingTop: 10,
-  }
 });
